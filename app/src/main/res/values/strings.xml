@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ClockGame</string>
+    <string name="btb_stamp">칭찬 도장</string>
+    <string name="btn_play">시작</string>
+</resources>
