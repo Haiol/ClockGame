@@ -3,11 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/play_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/play_background"
     tools:context=".MainActivity">
   <Button
+      android:id="@+id/btn_main_back"
       android:layout_width="35.5dp"
       android:layout_height="33.5dp"
       android:layout_alignParentRight="true"
@@ -15,12 +16,33 @@
       android:layout_marginRight="16dp"
       android:background="@drawable/stamp_btn_home"
       app:backgroundTint="#CFB496" />
-
-  <FrameLayout
-      android:id="@+id/main_content"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent" />
-
+  <com.lovehp30.clockgame.ClockView
+      android:layout_marginTop="95dp"
+      android:layout_centerHorizontal="true"
+      android:id="@+id/clockBoard"
+      android:layout_width="310dp"
+      android:layout_height="310dp"/>
+  <Button
+      android:id="@+id/play_btn_left"
+      android:background="@drawable/play_button"
+      android:layout_width="140dp"
+      android:layout_marginLeft="40dp"
+      android:layout_marginTop="500dp"
+      android:text="ddd"
+      android:layout_height="65dp"
+      android:onClick="clickBtnEvent"
+      app:backgroundTint="#FFFFC960"/>
+  <Button
+      android:id="@+id/play_btn_right"
+      android:background="@drawable/play_button"
+      android:layout_width="140dp"
+      android:layout_alignParentRight="true"
+      android:layout_marginRight="40dp"
+      android:layout_marginTop="500dp"
+      android:onClick="clickBtnEvent"
+      android:text="ddd"
+      android:layout_height="65dp"
+      app:backgroundTint="#FFFFC960"/>
   <LinearLayout
       android:id="@+id/cat_move"
       android:layout_width="310dp"

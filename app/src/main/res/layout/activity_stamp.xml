@@ -8,6 +8,7 @@
     tools:context=".StampActivity">
 
     <Button
+        android:id="@+id/btn_stamp_back"
         android:layout_width="35.5dp"
         android:layout_height="33.5dp"
         android:layout_alignParentRight="true"
