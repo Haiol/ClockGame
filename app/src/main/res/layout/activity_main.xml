@@ -109,7 +109,7 @@
     <ImageView
         android:id="@+id/move10"
         android:layout_width="0dp"
-        android:layout_height="43dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:src="@drawable/move_fish"
         />

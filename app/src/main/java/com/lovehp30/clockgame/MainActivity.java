@@ -3,10 +3,12 @@ package com.lovehp30.clockgame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -84,8 +86,9 @@ public class MainActivity extends AppCompatActivity {
             if (v == binding.playBtnLeft) correct = true;
             else correct = false;
         }
+        popupDialog(correct);
         if (correct) {//정답 이벤트
-            Toast.makeText(getApplicationContext(), "정답", Toast.LENGTH_LONG).show();
+//            Toast.makeText(getApplicationContext(), "정답", Toast.LENGTH_LONG).show();
             pivot++;
             Log.e("Step",step[pivot].getId()+"");
 
@@ -98,6 +101,22 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+    private void popupDialog(boolean flag){
+        Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if(flag)dialog.setContentView(R.layout.dialog_y);
+        else dialog.setContentView(R.layout.dialog_n);
+        dialog.show();
+        new Thread(() -> {
+            try {
+                Thread.sleep(1000);
+                dialog.dismiss();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
     private void setCatMove(){
         if(pivot==9)//last
         {
